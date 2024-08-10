@@ -11,7 +11,7 @@ from django.contrib import messages
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
-
+  
 
 con=mysql.connector.connect(database='envirovista',user='root',password='')
 cur=con.cursor()
