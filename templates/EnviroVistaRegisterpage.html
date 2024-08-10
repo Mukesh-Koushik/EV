@@ -1,0 +1,363 @@
+{% load static %}
+
+<DOCTYPE html>
+    <head>
+      <title> Signin page </title>
+      <link rel="icon" type="image/png" href="{% static 'EVlogo.jpg' %}">
+    </head>
+    
+    <body id="login-page">
+  
+      <div id="triangle-overlay-grey"></div>
+      <div id="triangle-overlay"></div>
+      
+      <div class="col-sm-12 col-lg-6" id="login">
+          <div class="section-container">
+              <div id="form-s-l">
+                  <div id="form-heading">
+                        <h5>EnviroVista</h5>
+                        <img src="{% static 'Logo.png' %}" height="50px" width="50px" style="margin-top: 40px;" alt="">
+                        <h5>Join Us</h5>
+                        <h5 class="idt-color"><a href="{% url 'loginpage' %}">Login</a></h5>
+                        <div class="breakline"></div>
+                  </div>
+                  <form action="{% url 'register_db' %}" method="post">
+                    {% csrf_token %}
+                      <input required placeholder="First name" name="t1" type="text">
+                      <input required placeholder="Last name" name="t2" type="text">
+                      <input required placeholder="E-mail" name="t3" type="email">
+                      <input required placeholder="Phone number" name="t4" type="text">
+                      <input required placeholder="Password" name="t5" type="password">
+                      <input required placeholder="Address" name="t6" type="textarea">
+                      <button type="submit" class="joblux-bg transition" >Register</button>
+                  </form>
+                  <div id="terms-of-use">
+                      By clicking Register, you agree to the LinkedIn <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and
+                      <a href="#">Cookie Policy</a>.
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      </body>
+      <style>
+        * {
+           -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+           box-sizing: border-box;
+           font-family: 'Roboto', sans-serif !important;
+          }
+         
+         h1 {
+             font-size: 70px;
+         }
+         
+         h2 {
+             font-size: 60px;
+         }
+         
+         h3 {
+             font-size: 50px;
+         }
+         
+         h4 {
+             font-size: 40px;
+         }
+         
+         h5 {
+             font-size: 30px;
+         }
+         
+         h6 {
+             font-size: 20px;
+         }
+         
+         li {
+             list-style: none;
+             margin: 14px 0;
+         }
+         
+         ul {
+             padding: 0;
+         }
+         
+         li a {
+             color: rgba(0, 0, 0, 0.52);
+         }
+         
+         a {
+             -webkit-transition: all 0.145s ease;
+             -moz-transition: all 0.145s ease;
+             -ms-transition: all 0.145s ease;
+             -o-transition: all 0.145s ease;
+             transition: all 0.145s ease;
+         }
+         html {
+             height: 100%;
+         }
+         
+         #login-page{
+           overflow-x:hidden;
+             position: relative;
+             margin:10;
+             padding:0;
+             width:100%;
+             min-height: 100%;
+             background-image: url("https://wallpapercave.com/wp/wp12401326.jpg");
+             background-repeat: no-repeat;
+             background-size: cover;
+         }
+         #triangle-overlay {
+             position: absolute;
+             right: 0;
+             bottom: 0;
+             width: 0;
+             height: 0;
+             border-style: solid;
+             border-color: transparent transparent #d4af38 transparent;
+             z-index: 1;
+         }
+         #triangle-overlay-grey {
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 0;
+             height: 0;
+             border-style: solid;
+             border-color: #0f75c3 transparent transparent transparent;
+             z-index: 2;
+         }
+         .breakline {
+             clear: both;
+         }
+         
+         .transition {
+             -webkit-transition: all 0.2s ease;
+             -moz-transition: all 0.2s ease;
+             -ms-transition: all 0.2s ease;
+             -o-transition: all 0.2s ease;
+             transition: all 0.2s ease;
+         }
+         
+         a:hover {
+             color: #000;
+             text-decoration: none;
+         }
+         
+         .joblux-bg {
+             background: #014e98;
+         }
+         
+         .joblux-bg:hover {
+             background: #168af0;
+         }
+         
+         .idt-color,
+         a {
+             color: #014e98;
+         }
+         
+         .section-container {
+             height: 90vh;
+           min-height:440px;
+         }
+         
+         #main-container {
+             width: 90%;
+             max-width: 90%;
+             margin: auto;
+             position: relative;
+             z-index: 10;
+         }
+         
+         #main-container .section-container {
+             width: 60%;
+             flex-flow: column;
+             margin: auto;
+             display: flex;
+             flex-direction: column;
+             justify-content: space-between;
+         }
+         
+         #main-nav {
+             background-color: white;
+             padding: 0;
+         }
+         
+         .section-container {
+             width: 50%;
+             margin: auto;
+         }
+         
+         div#sub-nav-main {
+             margin-bottom: auto;
+         }
+         
+         #sub-nav-main ul:first-child {
+             margin: 60px 0;
+         }
+         
+         h3#logo {
+             margin-top: 60px;
+         }
+         
+         #sublogo {
+             font-family: 'Noto Serif KR', sans-serif !important;
+             margin-bottom: 30px;
+         }
+         
+         div#secodery-nav {
+             background: #f1f2f5;
+         }
+         
+         div#secodery-nav a {
+             font-size: 13px;
+         }
+         
+         #secodery-nav .section-container {
+             width: 69%;
+             margin-top: auto;
+         }
+         
+         #secodery-nav-container {
+             margin-top: auto;
+             margin-bottom: 30px;
+         }
+         
+         #copyright {
+             margin-bottom: 30px;
+             font-size: 12px;
+             text-align: right;
+             color: rgba(0, 0, 0, 0.52);
+         }
+         
+         #login {
+             background: url("") no-repeat;
+             -webkit-background-size: cover;
+             background-size: cover;
+         }
+         
+         #form-s-l {
+             margin: auto;
+             background-color:#bff0b9;
+         }
+         
+         div#trems-of-use {
+             background: #f1f2f5;
+             padding: 12px;
+             text-align: center;
+             color: #00000085;
+             font-size: 12px;
+             margin-top: 12px;
+         }
+         
+         div#form-s-l form {
+             padding: 15px 30px 12px;
+         }
+         
+         div#form-s-l input {
+             width: 100%;
+             margin: 6px 0;
+             padding: 4px;
+             border: 1px solid #d6d6d6;
+         }
+         
+         #form-heading {
+             padding: 25px 30px 0;
+         }
+         
+         div#form-s-l input:focus {
+             outline: none;
+         }
+         
+         div#form-s-l button {
+             margin: auto;
+             display: block;
+             margin-top: 24px;
+             padding: 15px 30px;
+             color: #fff;
+             border: unset;
+             font-size: larger;
+             font-weight: bold;
+             background-color: rgb(28, 74, 28);
+             border: 3px solid black;
+             border-radius: 10px;
+         }
+         
+         div#form-s-l ::placeholder {
+             color: #014e98;
+             opacity: 1;
+         }
+         
+         div#form-s-l :-ms-input-placeholder {
+             color: #014e98;
+         }
+         
+         div#form-s-l ::-ms-input-placeholder {
+             color: #014e98;
+         }
+         
+         div#form-s-l button:hover {
+             cursor: pointer;
+             background-color: #4db01f;
+             transition: 0.4s;
+         }
+         div#form-s-l button:active {
+             cursor: pointer;
+             background-color: #8cda6b;
+             transition: 0.1s;
+         }
+         #form-heading h5:first-child {
+             float: left;
+         }
+         
+         #form-heading h5:nth-child(2) {
+             float: right;
+         }
+         
+         #form-heading h5 {
+             font-weight: 500;
+         }
+         
+         @media screen and (max-width: 1200px) {
+             #login .section-container {
+                 width: 90%;
+             }
+         }
+         
+         @media screen and (max-width: 1300px) {
+             #secodery-nav .section-container {
+                 margin: 0;
+                 width: 100%;
+                 padding: 0 12px 0 0;
+             }
+         }
+         @media screen and (max-width: 991px) {
+             #triangle-overlay {
+                 background: none;
+             }
+             #main-container {
+                 width: 100%;
+                 max-width: 100%;
+                 padding: 0;
+                 margin: 0;
+             }
+         }
+         @media screen and (max-width: 540px) {
+             #secodery-nav #secodery-nav-container {
+                 margin: 0;
+             }
+             #secodery-nav .section-container {
+                 width: 50%;
+                 flex-flow: unset;
+                 margin: auto;
+                 display: block;
+                 flex-direction: unset;
+                 justify-content: unset;
+                 height: auto;
+             }
+         }
+             </style>
+             
+       
+      </DOCTYPE>

@@ -1,0 +1,697 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>EnviroVista</title>
+        <link rel="icon" type="image/png" href="{% static 'EVlogo.jpg' %}">
+    </head>
+    <body>
+        <div class="home">
+            <nav>
+                <ul class="sidebar">
+                    <li onclick="hidebar()" style="color: white;"><a href="" ><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                    <!--<img src="D:\ev.jpg" alt="tryagain" id="ico">-->
+                    <li id="logo"><a href="{% url 'homepage' %}"><span>EnviroVista</span></a></li>
+                    <li><a href="{% url 'Taskshomepage' %}">Tasks</a></li>
+                    <li><a href="{% url 'GCShomepage' %}">GCS</a></li>
+                    <li><a href="{% url 'Ideaforgehomepage' %}">IdeaForge</a></li>
+                    <li><a href="{% url 'Ecoawarehomepage' %}">EcoAware</a></li>
+                    <li><a href="{% url 'Profilepage' %}">Profile</a></li>
+                </ul>
+                <ul>
+                    <img src="{% static 'Logo.png' %}" alt="tryagain" id="icon">
+                    <li id="logo1"><a href="{% url 'homepage' %}"><span>EnviroVista</span></a></li>
+                    <!--<i class="fa fa-heartbeat" class="col-3" id="icon" aria-hidden="true"></i>-->
+                    <li class="hideonmobile"><a href="{% url 'Taskshomepage' %}">Tasks</a></li>
+                    <li class="hideonmobile"><a href="{% url 'GCShomepage' %}">GCS</a></li>
+                    <li class="hideonmobile"><a href="{% url 'Ideaforgehomepage' %}">IdeaForge</a></li>
+                    <li class="hideonmobile"><a href="{% url 'Ecoawarehomepage' %}">EcoAware</a></li>
+                    <li class="hideonmobile"><a href="{% url 'Profilepage' %}">Profile</a></li>
+                    <li onclick="showsidebar(event)" class="menubtn"><a href=""><svg xmlns="http://www.w3.org/2000/svg"  height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                </ul>
+            </nav>
+            <!--CODE FOR SEARCH BAR-->
+            <div class="search">
+                <input type="search" placeholder="Search" class="searchbar">
+                <button type="submit" class="searchbtn">Search</button>
+            </div>
+                    <!--image slider start-->
+        <div class="slider">
+            <div class="slides">
+                <!--radio buttons start-->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <!--radio buttons end-->
+                <!--slide images start-->
+                <div class="slide first">
+                    <img src="https://cdn.vectorstock.com/i/500p/14/26/flash-sale-banner-lightning-sales-poster-fast-vector-25061426.avif "alt="tryagain">
+                </div>
+                <div class="slide">
+                    <img src="https://t4.ftcdn.net/jpg/03/61/33/61/360_F_361336183_dpuBwLkrB1VnfCXu1DrHhD3CbXZXqUYK.jpg" alt="tryagain">
+                </div>
+                <div class="slide">
+                    <img src="https://img.freepik.com/premium-vector/daily-deals-day-with-decorative-lettering-text-style-label-hand-drawn-illustration_2175-10353.jpg" alt="tryagain">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.vectorstock.com/i/500p/15/98/end-season-sale-banner-template-vector-28621598.avif" alt="tryagain">
+                </div>
+                <!--slide images end-->
+                <!--automatic navigation start-->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                <!--automatic navigation end-->
+                <div>
+                    <!--manual navigation start-->
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                </div>
+                    <!--manual navigation start-->
+            </div>
+        </div>
+        <!--image slider end-->
+        <br><br><br>
+            <div class="products">
+                <div class="column">
+                    <div class="product1">
+                        <img src="https://i.etsystatic.com/17807375/r/il/346ebf/5581175462/il_1080xN.5581175462_h6i6.jpg" alt="tryagain" id="picimg">
+                        <h1>Metal Decorations</h1>
+                        <h4>Decorative Items: Decorative metal handicraft items, such as metal wall hangings, metal photo frames, and metal sculptures, are used to add a touch of elegance and beauty to a space. These items are often handcrafted using techniques like casting, engraving, and hammering to create intricate and detailed designs</h4>
+                        <!--<button onclick="" id="learnmore">Learn More</button>--> 
+                        <h3><a href="prodpage1" >See More</a></h3>
+                    </div>
+                    <div class="product1">
+                        <img src="https://cdn11.bigcommerce.com/s-x49po/products/62181/images/88079/1600810778861_IMG_20200923_030358__13707.1607779468.500.659.jpg?c=2" alt="tryagain" id="picimg">
+                        <h1>Paper paintings</h1>
+                        <h4>Paper paintings are artworks that are made on paper. There are many types of paper over which paintings can be made. For example, thin paper-like cartridge sheets, glossy and thick paper, textured handmade sheets, etc.</h4>
+                        <!--<button onclick="" id="learnmore">Learn More</button>-->
+                        <h3><a href="prodpage2" >See More</a></h3>
+                    </div>
+                    <div class="product1">
+                        <img src="https://5.imimg.com/data5/ANDROID/Default/2020/10/QV/CQ/SY/115638384/1603343499020-jpg.jpg" alt="tryagain" id="picimg">
+                        <h1>Cloth paintings</h1>
+                        <h4>Fabric painting simply refers to any painting done on a fabric. Today, people use fabric painting techniques to paint apparel such as t–shirts and jeans as well has home furnishings. However, these techniques have been around for thousands of years in Asia.</h4>
+                        <!--<button onclick="" id="learnmore">Learn More</button>-->
+                        <h3><a href="prodpage3" >See More</a></h3>
+                    </div>
+                    <div class="product1">
+                        <img src="https://fabricwholesaledirect.com/cdn/shop/articles/A_Brief_History_of_Fabric_and_Textiles_2ddd37b6-f749-4d71-9d37-60c2683a5435.jpg?v=1612474697" alt="tryagain" id="picimg">
+                        <h1>Textiles</h1>
+                        <h4>A textile is any material made of interlacing fibers, including carpeting and geotextiles, which may not necessarily be used in the production of further goods, such as clothing and upholstery.</h4>
+                        <!--<button onclick="" id="learnmore">Learn More</button>-->
+                        <h3><a href="prodpage4" >See More</a></h3>
+                    </div>
+                    <div class="product1">
+                        <img src="https://i.pinimg.com/564x/e2/0f/14/e20f14eb8ae727492fe129af85e620f7.jpg" alt="tryagain" id="picimg">
+                        <h1>Home decorations</h1>
+                        <h4>Home decor is clearing and creating living spaces that are visually appealing and more attractive to the human eye. Designing and decorating our homes is something we can easily envision. We all know what our ideal home looks like, and often it's making this vision a reality that's difficult to achieve..</h4>
+                        <!--<button onclick="" id="learnmore">Learn More</button>-->
+                        <h3><a href="prodpage5" >See More</a></h3>
+                    </div>
+                    <div class="product1">
+                        <img src="https://m.media-amazon.com/images/I/51kKlWW7FRS._AC_UF894,1000_QL80_.jpg" alt="tryagain" id="picimg">
+                        <h1>Wood decoration</h1>
+                        <h4>Decorative wood products can play the role of not only interior decoration, but also have useful functions. Wood decor includes such products as: mirrors with a wooden frame, paintings, clocks, panels, flower pots, sculptures, figurines and much more.</h4>
+                        <!--<button onclick="" id="learnmore">Learn More</button>-->
+                        <h3><a href="prodpage6" >See More</a></h3>
+                    </div>
+                    <div class="product1">
+                        <img src="https://img.ws.mms.shopee.com.my/da7591da39f1e99c365c3d93eff5554f" alt="tryagain" id="picimg">
+                        <h1>Cashew and walnuts</h1>
+                        <h4>The vitamins, minerals, and macronutrients found within cashews and walnuts have a distinct effect on health. From heart to health to blood sugar levels, gut health, and beyond, many systems within the body find enhancement through specific foods.</h4>
+                        <!--<button onclick="" id="learnmore">Learn More</button>-->
+                        <h3><a href="prodpage7" >See More</a></h3>
+                    </div>
+                    <div class="product1">
+                        <img src="https://www.villagesquare.in/wp-content/uploads/2022/09/Brass-02-1.jpg" alt="tryagain" id="picimg">
+                        <h1>Bell metal utensils</h1>
+                        <h4>Besides this metal being used in the casting of bells, bell metal is used to make other musical instruments such as cymbals. It can also be found in sculptures, figurines, and eating utensils primarily used in India.</h4>
+                        <!--<button onclick="" id="learnmore">Learn More</button>-->
+                        <h3><a href="prodpage8" >See More</a></h3>
+                    </div>
+                    <div class="product1">
+                        <img src="https://www.artsofindia.in/pub/media/catalog/product/cache/c9966aa16db19c8b7c4a341b60396449/a/o/aoi-bhil-18_padmaja_tree_13x20.jpg" alt="tryagain" id="picimg">
+                        <h1>Bhils embroidery </h1>
+                        <h4>Bhil is another traditional art form that originated in the state of Rajasthan. Bhil art is known for its simplicity and use of vibrant colours. The art form is usually practised on walls, floors, or cloth, and the paintings depict the local mythology, nature, and the daily lives of the Bhil tribe</h4>
+                        <!--<button onclick="" id="learnmore">Learn More</button>-->
+                        <h3><a href="prodpage9" >See More</a></h3>
+                    </div>
+                    <div class="product1">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNyS3tQswq0UQhfwosq_3zWatKR_GGiyhdz5jRo54DZQfVKUOWZAC1T4eRiknZVo0tAg7Q_mEC7K1WBk4YigXvEOyaualLsu4WtAjZTPXxZtmkbhMY1cxDOQ9_mcJtxSkFBzP7EflIrkyu/s1600/DSCF6200.jpg" alt="tryagain" id="picimg">
+                        <h1>Gadabas clay toys</h1>
+                        <h4>The clay toys are basically made of clay in the process of terracotta making. Different toys are made in the lumps through wheels by hand, sundried and fired in a kiln. After colouring, the products are used for indoor and outdoor decoration.</h4>
+                        <!--<button onclick="" id="learnmore">Learn More</button>-->
+                        <h3><a href="prodpage10" >See More</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sec3">
+            <footer id="footer">
+                <div class="col-3">
+                    <a href="#" style="text-decoration: none; font-size: 25px; font-weight: bold;">EnviroVista</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">About Us</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Terms and Conditions</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Feedback</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Help</a>
+                </div>
+                <div class="col-3">
+                    <a href="">© 2024 EnviroVista. All Rights Reserved.</a>
+                </div>
+            </footer>
+        </div>
+    </body>
+    <style>
+        /**CSS FOR THE NAV BAR**/
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            color: #66B539;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        #logo1{
+            color: white;
+            right: 400px;
+            position:relative;
+        }
+        #icon{
+            color: white;
+            pointer-events: none;
+            position: relative;
+            right: 390px;
+            height: 50px;
+            width: 50px;
+        }
+        body{
+            min-height: 100%;
+            background-image: url("https://wallpapers.com/images/high/bare-light-green-plain-ccgwylr7jtzskkh4.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        nav{
+            background-color: #EBF2DD;
+            box-shadow: 1px 2px 3px rgb(73, 68, 68);
+        }
+        nav ul{
+            list-style: none;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        nav li{
+            height: 70px;
+        }
+        nav a{
+            height: 100%;
+            padding: 0 30px;
+            text-decoration: none;
+            display: flex;
+            font-size: 18px;
+            align-items: center;
+            color: #151D;
+        }
+        span:hover{
+            color: #EBF2DD;
+            background-color: #66B539;
+        }
+        nav a:hover{
+            color: #EBF2DD;
+            background-color: #66B539;
+            transition: 0.4s;
+        }
+        nav a:active{
+            color: #EBF2DD;
+            background-color: #1f3d0e;
+            transition: 0.1s;
+        }
+        nav li:first-child, :hover{
+            margin-right: auto;
+            /*display: none;*/
+        }
+        .sidebar{
+            position: fixed;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 250px;
+            z-index: 999;
+            top: 0;
+            right: 0;
+            display: none;
+            height: 100%;
+            backdrop-filter:blur(10px);
+            box-shadow: 1px 2px 3px rgb(213, 196, 196);
+        }
+        .sidebar li{
+            width: 100%;
+        }
+        .sidebar a{
+            width: 100%;
+        }
+        .menubtn{
+            display: none;
+        }
+        /*CSS FOR SEARCH BAR*/
+        .search{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 80px;
+        }
+        .searchbar{
+            width: 50%;
+            height: 70px;
+            border-radius: 20px;
+            padding: 30px 20px;
+            font-size: 20px;
+            border: 1px solid black;
+            outline: none;
+            box-shadow: 1px 2px 3px #66B539;
+        }
+        .searchbtn{
+            height: 70px;
+            width: 100px;
+            border-radius: 20px;
+            background-color: #66B539;
+            color: white;
+            font-size: 20px;
+            border: 1px solid black;
+            cursor: pointer;
+            margin-top: 0px;
+        }
+        .searchbtn:hover{
+            background-color: #235606;
+            transition: 1s;
+            color: #EBF2DD;
+        }
+        .slider{
+            margin-top: 100px;
+            height: 700px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slides{
+            display: flex;
+            width: 700%;
+            height: 500px;
+        }
+        .slides input{
+            display: none;
+        }
+        .slide{
+            width: 20%;
+            transition: 1s;
+        }
+        .slide img{
+            width: 73%;
+            height: 500px;
+        }
+        /*css for maual slide navigation*/
+        .navigation-manual{
+            position: relative;
+            width: 800px;
+            display: flex;
+            margin-bottom: 70px;
+            margin-left: 500px;
+            justify-content: center;
+        }
+        .manual-btn{
+            border: 2px solid #EBF2DD;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+            position: relative;
+            display:block;
+            flex-direction: row;
+            top: 450px;
+            margin: 10px;
+            transition: 1s;
+        }
+        .manual-btn:not(:last-child){
+            margin-right: 15px;
+        }
+        .manual-btn:hover{
+            background-color: #EBF2DD;
+        }
+        #radio1:checked ~ .first{
+            margin-left: 0;
+        }
+        #radio2:checked ~ .first{
+            margin-left: -20%;
+        }
+        #radio3:checked ~ .first{
+            margin-left: -40%;
+        }
+        #radio4:checked ~ .first{
+            margin-left: -60%;
+        }
+        .navigation-auto{
+            position: absolute;
+            display: flex;
+            width: 800px;
+            justify-content: center;
+            margin: 20px;
+        }
+        .auto-btn{
+            border: 2px solid #EBF2DD;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 20px;
+            transition:1s;
+        }
+        /*.navigation-auto div:not(:first-child){
+            margin-right: 40px;
+        }*/
+        #radio1:checked ~ .navigation-auto .auto-btn1{
+            background-color: #EBF2DD;
+        }
+        #radio2:checked ~ .navigation-auto .auto-btn2{
+            background-color: #EBF2DD;
+        }
+        #radio3:checked ~ .navigation-auto .auto-btn3{
+            background-color: #EBF2DD;
+        }
+        #radio4:checked ~ .navigation-auto .auto-btn4{
+            background-color: #EBF2DD;
+        }
+        /*CSS FOR PRODUCTS*/
+        .products{
+            /*display: inline-flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            margin-top: 500px;
+            margin-left: 0;margin-right: 0;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            align-items: center;
+            top: 5500px;
+            margin-right: 0px;*/
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2800px;
+            margin-left: 50px;
+            margin-right: 0px;
+            width: 1200px;
+            height: 100%;
+        }
+        .product1 h1{
+            font-size: 35px;
+            font-weight: bold;
+            padding: 15px 0px;
+            color: #316513;
+        }
+        /*.column{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            position: absolute;
+            margin-top: 500px;
+        }*/
+        .product1{
+            width: 500px;
+            height: 500px;
+            background-color: #EBF2DD;
+            margin: 20px;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 1px 2px 3px #66B539;
+        }
+        .product1 h3 a{
+            height: 30px;
+            width: 150px;
+            border-radius: 20px;
+            background-color: #66B539;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border: 1px solid black;
+            text-decoration: none;
+            position: absolute;
+            margin-top: 30px;
+            padding: 5px 20px;
+            align-items: center;
+            font-size: 20px;
+        }
+        .product1 h3 a:hover{
+            background-color: #1f3d0e;
+            transition: 0.4s;
+        }
+        .product1 h3 a:active{
+            background-color:#345b1e ;
+            transition: 0.1s;
+        }
+        #learnmore{
+            height: 30px;
+            width: 150px;
+            border-radius: 20px;
+            background-color: #66B539;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border: 1px solid black;
+            cursor: pointer;
+            position: absolute;
+            margin-top: 30px;
+        }
+        button{
+            height: 30px;
+            width: 150px;
+            border-radius: 20px;
+            background-color: #66B539;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border: 1px solid black;
+            cursor: pointer;
+            margin-top: 100px;
+        }
+        #learnmore:hover{
+            background-color: #476016;
+            color: white;
+            transition: 1s;
+        }
+        #picimg{
+            height: 230px;
+            width: 230px;
+            margin: 0 auto;
+            display: block;
+            padding: 10px 20px;
+        }
+        .sec3{
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5500px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            width: 100%;
+            height: 200px;
+        }
+        #footer{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: #66B539;
+            width: 100%;
+            height: 200px;
+
+        }
+        .col-3{
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 0px;
+            margin-left: 10px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-color: #66B539;
+            width: 100%;
+           
+        }
+        .col-3 a{
+            color: #151D13;
+            font-size: 15px;
+            padding: 0 0 0 0;
+            text-decoration: none;
+        }
+        .col-3 a:hover{
+            color: #EBF2DD;
+            background-color: #151D13;
+        }
+        /*CSS FOR RESPONSIVE DESIGN*/
+        @media screen and (max-width:768px){
+            .hideonmobile{
+                display: none;
+            }
+            .menubtn{
+                display: block;
+                background-color: #EBF2DD;
+            }
+            nav a{
+                color: black;
+            }
+            nav a:hover{
+            background-color: white;
+            }
+            nav a:hover{
+                color: black;
+            }
+            #logo{
+                display: none;
+            }
+            .col-2{
+                width: 50%;
+            }
+            .col-3{
+                width: auto;
+            }
+            #icon{
+                display: flex;
+                right: 10px;
+            }
+            #logo1{
+                display: flex;
+                right: 30px;
+            }
+            .sidebar{
+                width: 100%;
+                height: 100%;
+                display: none;
+                backdrop-filter:blur(10px);
+                box-shadow: 1px 2px 3px rgb(213, 196, 196);
+            }
+            .sidebar li{
+                width: 100%;
+            }
+            .sidebar a{
+                width: 100%;
+            }
+            .navigation-manual{
+                display: flex;
+                position: relative;
+                margin-left: -520px;
+            }
+            .products{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top:2750px;
+                margin-left: -350px;
+                width: 1200px;
+                height: 100%;
+            }
+            .sec3{
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                margin-top: 5500px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                width: 100%;
+                height: 330px;
+                justify-content: center;
+                align-items: center;
+                background-color: #66B539;
+            }
+            #footer{
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                height: 300px;
+                flex-direction: column;
+                margin-left: 100px;
+            }
+            .col-3{
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                background-color: #66B539;
+                width: 100%;
+                height: 300px;
+                flex-direction: column;
+            }
+            .col-3 a{
+                color: #151D13;
+                font-size: 15px;
+                padding: 0 0 0 0;
+                text-decoration: none;
+            }
+            .col-3 a:hover{
+                color: #EBF2DD;
+                background-color: #151D13;
+            }
+        }
+    </style>
+    <script>
+            /*SCRIPT FOR SIDE BAR*/
+            function showsidebar(event){
+            event.preventDefault();
+            const sidebar=document.querySelector('.sidebar');
+            sidebar.style.display='flex';
+            }
+            function hidebar(){
+                const sidebar=documnet.querySelector('.sidebar');
+                sidebar.style.display='none';
+            }
+            /*SCRIPT FOR SLIDER*/
+            var counter=1;
+            setInterval(function(){
+                document.getElementById('radio'+counter).checked=true;
+                counter++;
+                if(counter>4){
+                    counter=1;
+                }
+            },5000);
+    </script>
+</html>

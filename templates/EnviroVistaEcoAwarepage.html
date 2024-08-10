@@ -1,0 +1,649 @@
+{% load static %}
+
+<html>
+<head>  
+    <title>EnviroVista</title>  
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="{% static 'EVlogo.jpg' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+</head>
+<body class="showcart">
+    <div class="home">
+        <nav>
+            <ul class="sidebar">
+                <li onclick="hidebar()" style="color: white;"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li id="logo"><a href="{% url 'homepage' %}"><span>EnviroVista</span></a></li>
+                <li><a href="{% url 'Taskshomepage' %}">Tasks</a></li>
+                <li><a href="{% url 'GCShomepage' %}">GCS</a></li>
+                <li><a href="{% url 'Ideaforgehomepage' %}">IdeaForge</a></li>
+                <li><a href="{% url 'Ecoawarehomepage' %}">EcoAware</a></li>
+                <li><a href="{% url 'Profilepage' %}">Profile</a></li>
+            </ul>
+            <ul>
+                <img src="{% static 'Logo.png' %}" alt="tryagain" id="icon">
+                <li id="logo1"><a href="{% url 'homepage' %}"><span>EnviroVista</span></a></li>
+                <li class="hideonmobile"><a href="{% url 'Taskshomepage' %}">Tasks</a></li>
+                <li class="hideonmobile"><a href="{% url 'GCShomepage' %}">GCS</a></li>
+                <li class="hideonmobile"><a href="{% url 'Ideaforgehomepage' %}">IdeaForge</a></li>
+                <li class="hideonmobile"><a href="{% url 'Ecoawarehomepage' %}">EcoAware</a></li>
+                <li class="hideonmobile"><a href="{% url 'Profilepage' %}">Profile</a></li>
+                <li onclick="showsidebar(event)" class="menubtn"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="taskstatus">
+            {% for user in users %}
+            <p>Tasks Completed: {{ user.tasks }}</p>
+            <br><p>GC Coins: {{ user.GCC }}</p>
+            {% endfor %}
+        </div>
+        <div class="disclaimer">
+            <h1>Disclaimer: The below activities are all group activities and to be performed with a team and the photos should be uploaded for the verification.</h1>
+        </div>
+        <div class="container">
+            <h1>AVAILABLE TASKS</h1>
+            <!--<div class="buttons"> 
+                <button type="button">All Tasks</button>
+                <button type="button" data-name="tree">Tree</button>
+                <button type="button" data-name="electricity">Electricity</button>
+                <button type="button" data-name="recycle">Recycle</button>
+                <button type="button" data-name="food">Food</button>
+                <button type="button" data-name="transport">Transport</button>
+                <button type="button" data-name="water">Water</button>
+                <button type="button" data-name="sustainability">Sustainability</button>
+                <button type="button" data-name="other">Other</button>
+            </div>-->
+
+            <div class="tasks">
+                <a href="{% url 'ecoaware1' %}"><div class="task" data-name="tree" >
+                    <img src="https://eastinair.com/wp-content/uploads/2020/03/house_diagram_air_leaks2.jpg" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Home Energy Audit, 5 GC Coins</h2>
+                        <p>
+                            Description : Conduct a thorough inspection of your home’s energy use to identify areas where you can improve efficiency. This includes checking for air leaks, inspecting insulation, and evaluating the efficiency of heating and cooling systems.
+                            Benefits : Reduces energy consumption, lowers utility bills, and decreases carbon footprint.
+                         </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware2' %}"><div class="task" data-name="electricity">
+                    <img src="https://cdn-hfkaj.nitrocdn.com/YYCfbZmftYNbARfeRvLHVlvaeqnWdEyE/assets/images/optimized/rev-2be6c54/www.solarpathnsw.com.au/wp-content/uploads/2022/09/solar-installation-time-900x450.jpeg" alt="">
+                    <div class="taskmatter">
+                    <h2>Task name :  Install Solar Panels, 5 GC Coins</h2>
+                    <p>
+                        Description : Install solar panels on your roof or property to harness renewable energy from the sun. This task may involve choosing the right system, getting permits, and professional installation.
+                        Benefits : Provides a clean energy source, reduces reliance on fossil fuels, and can lower electricity costs.
+                     </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware3' %}"><div class="task" data-name="recycle">
+                    <img src="https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/DIY-compost-bin-hero-A.jpg" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Create a Compost Bin, 5 GC Coins</h2>
+                        <p>
+                            Description : Set up a compost bin in your backyard to recycle organic waste like kitchen scraps and yard waste into nutrient-rich compost.
+                            Benefits : Reduces landfill waste, produces free fertilizer for your garden, and lowers methane emissions from landfills.
+                         </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware4' %}"><div class="task" data-name="food">
+                    <img src="https://search-static.byjusweb.com/question-images/byjus/135246_676dc44eb0ab9e4949fcee19d328ceaccb142bfe20160630-5020-1h33mx4.png" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Upgrade to Energy-Efficient Appliances, 5 GC Coins</h2>
+                        <p>
+                            Description : Replace old, energy-guzzling appliances with energy-efficient models certified by programs like ENERGY STAR.
+                            Benefits : Saves energy, reduces greenhouse gas emissions, and lowers energy bills</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware5' %}"><div class="task" data-name="transport">
+                    <img src="https://www.ecohome.net/sites/www.ecohabitation.com/files/imagecache/G12-Image-640/nouvelle/640px-simple_diagram_to_show_rainwater_harvesting.png" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Install a Rainwater Harvesting System, 5 GC Coins</h2>
+                        <p> 
+                            Description : Install a system to collect and store rainwater for use in irrigation, gardening, and other non-potable applications.
+                            Benefits : Conserves water, reduces water bills, and provides a sustainable water source</p>
+                    </div></a>
+                </div>
+                
+                <a href="{% url 'ecoaware6' %}"><div  class="task" data-name="water">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEt5_ACJAGnLKTdT7AcYNcIP_wNOjoCS1xsg&s" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name :  Switch to LED Lighting, 5 GC Coins</h2>
+                        <p>
+                            Description : Replace incandescent or fluorescent light bulbs with energy-efficient LED bulbs throughout your home.
+                            Benefits : Uses less energy, lasts longer, and reduces energy costs.
+                         </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware7' %}"><div class="task" data-name="water">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfP-8gkmDSOTS0NxztyE5itXw8QFaQoSjTab8r8c_DhyrdxYCEVudEfZkZwbDbNrqj1cw&usqp=CAU" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Plant a Native Garden, 5 GC Coins</h2>
+                        <p>
+                            Description : Create a garden using native plants that are adapted to your local climate and require minimal water and maintenance.
+                            Benefits : Supports local biodiversity, reduces water use, and provides habitat for wildlife.
+                         </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware8' %}"><div class="task" data-name="sustainability">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCH-OIFrEe2pj-n1W-WA99CCm5zVLOiURPJQ&s" alt="">
+                    <div class="taskmatter">
+                    <h2>Task name : Install Low-Flow Fixtures, 5 GC Coins</h2>
+                    <p> 
+                        Description : Replace existing faucets, showerheads, and toilets with low-flow models to reduce water consumption.
+                        Benefits : Lowers water use, reduces water bills, and conserves water resources.
+                     </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware9' %}"><div  class="task" data-name="other">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/NEA_recycling_bins%2C_Orchard_Road.JPG/1200px-NEA_recycling_bins%2C_Orchard_Road.JPG" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Implement a Home Recycling Program, 5 GC Coins</h2>
+                        <p>
+                              Description : Set up a system for sorting and recycling different types of waste, including plastics, metals, paper, and glass.
+                              Benefits : Reduces landfill waste, conserves natural resources, and promotes recycling habits.
+                           </p>
+                    </div></a>
+                </div> 
+                <a href="{% url 'ecoaware10' %}"><div  class="task" data-name="transport">
+                    <img src="https://i.natgeofe.com/k/228df136-b6d1-4526-bc6f-b5f3261bd007/solar-oven-final_3x2.jpg" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Build a DIY Solar Oven, 5 GC Coins</h2>
+                        <p>
+                            Description : Construct a solar oven using simple materials like cardboard, aluminum foil, and glass to cook food using solar energy.
+                               Benefits : Uses renewable energy, reduces electricity or gas usage, and provides an eco-friendly cooking method.
+                            
+                            </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware11' %}"><div class="task" data-name="recycle">
+                    <img src="https://www.permagard.co.uk/media/mageplaza/blog/post/blog/main_image/green-roof-construction.jpg" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Create a Green Roof, 5 GC Coins</h2>
+                        <p> 
+                            Description : Install a layer of vegetation on your roof to improve insulation, reduce stormwater runoff, and provide a habitat for wildlife.
+                            Benefits : Enhances energy efficiency, reduces heat island effect, and promotes biodiversity.
+                         
+                         </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware12' %}"><div class="task" data-name="recycle">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk6acHAdZiwe-vI_clki__nmcjeI3qFAzu5A&s" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Set Up a Bicycle Commuting Station, 5 GC Coins</h2>
+                        <p>
+                            Description : Create a dedicated area for storing bicycles and related gear to encourage biking as a sustainable mode of transportation.
+                             Benefits : Reduces carbon emissions, promotes physical health, and decreases traffic congestion.
+                          
+                         </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware13' %}"><div class="task" data-name="recycle">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4OcrdZ355dSxV3f3AuFU0Ft_eA-D00XfSRwcn1L2XUaLNE-zteWv_fU2TiFlWpvAC6jM&usqp=CAU" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Transition to a Plant-Based Diet, 5 GC Coins</h2>
+                        <p> 
+                              Description : Incorporate more plant-based meals into your diet, reducing the consumption of animal products.
+                              Benefits : Lowers your carbon footprint, conserves water, and supports animal welfare.
+                           
+                         </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware14' %}"><div class="task" data-name="recycle">
+                    <img src="https://getquicktech.com.au/wp-content/uploads/2020/09/Smart-Device-Setup_02-1024x683.jpg" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name : Install Smart Home Devices, 5 GC Coins</h2>
+                        <p>
+                            Description : Install smart thermostats, lighting controls, and other devices to optimize energy use in your home.
+                            Benefits : Enhances energy efficiency, reduces utility bills, and offers convenient control of home systems.
+                         
+                         </p>
+                    </div></a>
+                </div>
+                <a href="{% url 'ecoaware15' %}"><div class="task" data-name="recycle">
+                    <img src="https://i.natgeofe.com/k/3519980b-ba58-456d-b691-2ed516c223e0/clean-it-up-textimage_3x2.jpg" alt="">
+                    <div class="taskmatter">
+                        <h2>Task name :  Organize a Community Clean-Up, 5 GC Coins</h2>
+                        <p>
+                            Description  Plan and execute a local clean-up event to pick up litter, remove debris, and beautify public spaces.
+                            Benefits : Improves community aesthetics, reduces pollution, and fosters community spirit.
+                         </p>
+                    </div></a>
+                </div>
+            </div>
+        </section>
+        <div class="sec3">
+            <footer id="footer">
+                <div class="col-3">
+                    <a href="{% url 'homepage' %}" style="text-decoration: none; font-size: 25px; font-weight: bold;">EnviroVista</a>
+                </div>
+                <div class="col-3">
+                    <a href="{% url 'aboutus' %}">About Us</a>
+                </div>
+                <div class="col-3">
+                    <a href="{% url 'aboutus' %}">Contact Us</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Terms and Conditions</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Feedback</a>
+                </div>
+                <div class="col-3">
+                    <a href="{% url 'aboutus' %}">Help</a>
+                </div>
+                <p style="font-size: 17px;">© 2024 EnviroVista. <br> All Rights Reserved.</p>
+            </footer>
+    </body>
+    <style>
+    *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            color: #66B539;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        #logo1{
+            color: white;
+            right: 400px;
+            position:relative;
+        }
+        #icon{
+            color: white;
+            pointer-events: none;
+            position: relative;
+            right: 390px;
+            height: 50px;
+            width: 50px;
+        }
+        body{
+            min-height: 100%;
+            background-image: url("https://wallpapers.com/images/high/bare-light-green-plain-ccgwylr7jtzskkh4.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        nav{
+            background-color: #EBF2DD;
+            box-shadow: 1px 2px 3px rgb(73, 68, 68);
+        }
+        nav ul{
+            list-style: none;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        nav li{
+            height: 70px;
+        }
+        nav a{
+            height: 100%;
+            padding: 0 30px;
+            text-decoration: none;
+            display: flex;
+            font-size: 18px;
+            align-items: center;
+            color: #151D;
+        }
+        span:hover{
+            color: #EBF2DD;
+            background-color: #66B539;
+        }
+        nav a:hover{
+            color: #EBF2DD;
+            background-color: #66B539;
+            transition: 0.4s;
+        }
+        nav a:active{
+            color: #EBF2DD;
+            background-color: #1f3d0e;
+            transition: 0.1s;
+        }
+        nav li:first-child, :hover{
+            margin-right: auto;
+            /*display: none;*/
+        }
+        .sidebar{
+            position: fixed;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 250px;
+            z-index: 999;
+            top: 0;
+            right: 0;
+            display: none;
+            height: 100%;
+            backdrop-filter:blur(10px);
+            box-shadow: 1px 2px 3px rgb(213, 196, 196);
+        }
+        .sidebar li{
+            width: 100%;
+        }
+        .sidebar a{
+            width: 100%;
+        }
+        .menubtn{
+            display: none;
+        }
+        body{
+            margin: 0;
+        }
+        body{
+            margin: 0;
+        }
+        .disclaimer h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 20px;
+            margin-top: 50px;
+            font-weight: bold;
+            color: black;
+        }
+        .taskstatus{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 35px;
+            margin-top: 50px;
+            font-weight: bold;
+            color: #284418;
+            border-color: #1c350e;
+            background-color: #afc584;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 70px;
+            width: 100%;
+        }
+        .buttons{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .container h1{
+            font-size: 30px;
+            font-weight: bold;
+            margin-right: 20px;
+            color: #284418;
+            background-color: #afc584;
+            padding: 20px 20px;
+            border: 2px solid #374913;
+            border-radius: 10px;
+        }
+        .buttons button{
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #66B539;
+            color: #EBF2DD;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #66B539;
+            cursor: pointer;
+        }
+        .buttons button:hover{
+            background-color: #1c350e;
+            color: #EBF2DD;
+            transition: 1s;
+        }
+        .tasks{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 70px;
+            gap: 20px;
+        }
+        .task a{
+            display: flex;
+            flex-basis: 300PX;
+            text-decoration: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            border: 6px solid darkgreen;
+            border-radius: 10px;
+            padding: 20px 20px;
+            background-color: #8a9b6a;
+            width: 500px;
+            height: 500px;
+            color: #151D13;
+        }
+        .task img{
+            width: 50%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .task h2{
+            padding:0 0 20px 0;
+        }
+        .taskmatter{
+            margin-top: 20px;
+        }
+        .task p{
+            font-size: 20px;
+            font-style: times new roman;
+        }
+        .sec3{
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            margin-top: 8555px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            width: 100%;
+            height: 200px;
+        }
+        #footer{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: #66B539;
+            width: 100%;
+            height: 200px;
+
+        }
+        .col-3{
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 0px;
+            margin-left: 10px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-color: #66B539;
+            width: 100%;
+           
+        }
+        .col-3 a{
+            color: #151D13;
+            font-size: 15px;
+            padding: 0 0 0 0;
+            text-decoration: none;
+        }
+        .col-3 a:hover{
+            color: #EBF2DD;
+            background-color: #151D13;
+        }
+        @media screen and (max-width: 800px){
+            .hideonmobile{
+                display: none;
+            }
+            .menubtn{
+                display: block;
+                background-color: #EBF2DD;
+            }
+            nav a{
+                color: black;
+            }
+            nav a:hover{
+            background-color: white;
+            }
+            nav a:hover{
+                color: black;
+            }
+            #logo{
+                display: none;
+            }
+            .col-2{
+                width: 50%;
+            }
+            .col-3{
+                width: auto;
+            }
+            #icon{
+                display: flex;
+                right: 10px;
+            }
+            #logo1{
+                display: flex;
+                right: 30px;
+            }
+            .taskstatus{
+                font-size: 30px;
+            }
+            .tasks{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0px;
+            margin-top: 30px;
+            /*border: 2px solid black;*/                                            
+            }
+            .task1{
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                margin-left: 0px;
+                justify-content: center;
+                align-items: center;
+            }
+            .tasks h1{
+                /*position: relative;*/
+                margin-left: 30px;
+            }
+            .task1 h2{
+               /* position: relative;*/
+                margin-left:-20px;
+            }
+            .task1 p{
+                /*display: flex;
+                position: relative;*/
+                margin-left: 0px;
+                font-size: large;
+                /*margin-right: 0px;*/
+            }
+            .task1 button{
+                /*display: flex;
+                position: relative;*/
+                margin-left:270px;
+            }
+            .sec3{
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                margin-top: 6000px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                width: 108%;
+                height: 330px;
+                justify-content: center;
+                align-items: center;
+                background-color: #66B539;
+            }
+            #footer{
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                height: 300px;
+                flex-direction: column;
+                margin-left: 0px;
+            }
+            .col-3{
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 0px;
+                margin-left: 350px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                background-color: #66B539;
+                width: 100%;
+                height: 300px;
+                flex-direction: column;
+            }
+            .col-3 a{
+                color: #151D13;
+                font-size: 15px;
+                padding: 0 0 0 0;
+                text-decoration: none;
+            }
+            .col-3 a:hover{
+                color: #EBF2DD;
+                background-color: #151D13;
+            }
+        }
+    </style>
+    <script>
+            /*SCRIPT FOR SIDE BAR*/
+            function showsidebar(event){
+            event.preventDefault();
+            const sidebar=document.querySelector('.sidebar');
+            sidebar.style.display='flex';
+            }
+            function hidebar(){
+                const sidebar=documnet.querySelector('.sidebar');
+                sidebar.style.display='none';
+            }
+
+            //SCRIPT FOR TASKS
+            const buttons=document.querySelectorAll('.buttons button');
+            const tasks=document.querySelectorAll('.tasks .task');
+            buttons.forEach(button=>{
+                button.addEventListener('click',()=>{
+                    tasks.forEach(task=>{
+                        if(button.innerText.toLowerCase()===task.getAttribute('data-name') || button.innerText.toLowerCase()==='all tasks'){
+                            task.style.display='flex';
+                        }else{
+                            task.style.display='none';
+                        }
+                    });
+                });
+            });
+
+    </script>
+</html>

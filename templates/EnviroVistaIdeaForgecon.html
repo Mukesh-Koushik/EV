@@ -1,0 +1,340 @@
+{% load static %}
+
+<html>
+<head>  
+    <title>EnviroVista</title>  
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="{% static 'EVlogo.jpg' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="showcart">
+    <div class="home">
+        <nav>
+            <ul class="sidebar">
+                <li onclick="hidebar()" style="color: white;"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li id="logo"><a href="{% url 'homepage' %}"><span>EnviroVista</span></a></li>
+                <li><a href="{% url 'Taskshomepage' %}">Tasks</a></li>
+                <li><a href="{% url 'GCShomepage' %}">GCS</a></li>
+                <li><a href="{% url 'Ideaforgehomepage' %}">IdeaForge</a></li>
+                <li><a href="{% url 'Ecoawarehomepage' %}">EcoAware</a></li>
+                <li><a href="{% url 'Profilepage' %}">Profile</a></li>
+            </ul>
+            <ul>
+                <img src="{% static 'Logo.png' %}" alt="tryagain" id="icon">
+                <li id="logo1"><a href="{% url 'homepage' %}"><span>EnviroVista</span></a></li>
+                <li class="hideonmobile"><a href="{% url 'Taskshomepage' %}">Tasks</a></li>
+                <li class="hideonmobile"><a href="{% url 'GCShomepage' %}">GCS</a></li>
+                <li class="hideonmobile"><a href="{% url 'Ideaforgehomepage' %}">IdeaForge</a></li>
+                <li class="hideonmobile"><a href="{% url 'Ecoawarehomepage' %}">EcoAware</a></li>
+                <li class="hideonmobile"><a href="{% url 'Profilepage' %}">Profile</a></li>
+                <li onclick="showsidebar(event)" class="menubtn"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+        </div>     
+        <div class="sec2">
+            <div class="ideacon">
+                <h1 class="thankyou">Thank You</h1>
+            <h2 class="youroic">Your ideas may help in improving the eco-system around us.Keep suggesting ideas to make the world around us a better place for our future generations!!</h2>
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/014/623/248/small_2x/light-bulb-icon-light-bulb-ideas-and-creativity-analytical-thinking-for-innovation-processing-png.png" class="rightpic" alt="">
+            </div>
+        </div>
+        <div class="sec3">
+            <footer id="footer">
+                <div class="col-3">
+                    <a href="#" style="text-decoration: none; font-size: 25px; font-weight: bold;">EnviroVista</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">About Us</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Terms and Conditions</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Feedback</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Help</a>
+                </div>
+                <div class="col-3">
+                    <a href="">© 2024 EnviroVista. All Rights Reserved.</a>
+                </div>
+            </footer>
+        </div>
+    </body>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            color: #66B539;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        #logo1{
+            color: white;
+            right: 400px;
+            position:relative;
+        }
+        #icon{
+            color: white;
+            pointer-events: none;
+            position: relative;
+            right: 390px;
+            height: 50px;
+            width: 50px;
+        }
+        body{
+            min-height: 100%;
+            background-image: url("https://wallpapers.com/images/high/bare-light-green-plain-ccgwylr7jtzskkh4.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        nav{
+            background-color: #EBF2DD;
+            box-shadow: 1px 2px 3px rgb(73, 68, 68);
+        }
+        nav ul{
+            list-style: none;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        nav li{
+            height: 70px;
+        }
+        nav a{
+            height: 100%;
+            padding: 0 30px;
+            text-decoration: none;
+            display: flex;
+            font-size: 18px;
+            align-items: center;
+            color: #151D;
+        }
+        span:hover{
+            color: #EBF2DD;
+            background-color: #66B539;
+        }
+        nav a:hover{
+            color: #EBF2DD;
+            background-color: #66B539;
+        }
+        nav li:first-child, :hover{
+            margin-right: auto;
+            /*display: none;*/
+        }
+        .sidebar{
+            position: fixed;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 250px;
+            z-index: 999;
+            top: 0;
+            right: 0;
+            display: none;
+            height: 100%;
+            backdrop-filter:blur(10px);
+            box-shadow: 1px 2px 3px rgb(213, 196, 196);
+        }
+        .sidebar li{
+            width: 100%;
+        }
+        .sidebar a{
+            width: 100%;
+        }
+        .menubtn{
+            display: none;
+        }
+        .sec2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+        }
+        .ideacon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #EBF2DD;
+            width: 60%;
+            height: 300px;
+            border: 3px solid black;
+            border-radius: 70px;
+            color: black;
+            padding: 20px 20px;
+        }
+        .thankyou{
+            color: black;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .youroic{
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .rightpic{
+            height: 100px;
+            width: 100px;
+        }
+        .sec3{
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            width: 100%;
+            height: 200px;
+        }
+        #footer{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: #66B539;
+            width: 100%;
+            height: 200px;
+
+        }
+        .col-3{
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 0px;
+            margin-left: 10px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-color: #66B539;
+            width: 100%;
+           
+        }
+        .col-3 a{
+            color: #151D13;
+            font-size: 15px;
+            padding: 0 0 0 0;
+            text-decoration: none;
+        }
+        .col-3 a:hover{
+            color: #EBF2DD;
+            background-color: #151D13;
+        }
+        @media screen and (max-width: 800px){
+            .hideonmobile{
+                display: none;
+            }
+            .menubtn{
+                display: block;
+                background-color: #EBF2DD;
+            }
+            nav a{
+                color: black;
+            }
+            nav a:hover{
+            background-color: white;
+            }
+            nav a:hover{
+                color: black;
+            }
+            #logo{
+                display: none;
+            }
+            .col-2{
+                width: 50%;
+            }
+            .col-3{
+                width: auto;
+            }
+            #icon{
+                display: flex;
+                right: 10px;
+            }
+            #logo1{
+                display: flex;
+                right: 30px;
+            }
+            .sec3{
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                margin-top: 180px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                width: 100%;
+                height: 330px;
+                justify-content: center;
+                align-items: center;
+                background-color: #66B539;
+            }
+            #footer{
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                height: 300px;
+                flex-direction: column;
+                margin-left: 100px;
+            }
+            .col-3{
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                background-color: #66B539;
+                width: 100%;
+                height: 300px;
+                flex-direction: column;
+            }
+            .col-3 a{
+                color: #151D13;
+                font-size: 15px;
+                padding: 0 0 0 0;
+                text-decoration: none;
+            }
+            .col-3 a:hover{
+                color: #EBF2DD;
+                background-color: #151D13;
+            }
+        }
+    </style>
+    <script>
+            /*SCRIPT FOR SIDE BAR*/
+            function showsidebar(event){
+            event.preventDefault();
+            const sidebar=document.querySelector('.sidebar');
+            sidebar.style.display='flex';
+            }
+            function hidebar(){
+                const sidebar=documnet.querySelector('.sidebar');
+                sidebar.style.display='none';
+            }
+    </script>
+</html>

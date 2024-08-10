@@ -1,0 +1,582 @@
+{% load static %}
+
+<html>
+<head>
+    <title>EnviroVista</title>
+    <link rel="icon" type="image/png" href="{% static 'EVlogo.jpg' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="showcart">
+    <div class="home">
+        <nav>
+            <ul class="sidebar">
+                <li onclick="hidebar()" style="color: white;"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li id="logo"><a href="{% url 'homepage' %}"><span>EnviroVista</span></a></li>
+                <li><a href="{% url 'Taskshomepage' %}">Tasks</a></li>
+                <li><a href="{% url 'GCShomepage' %}">GCS</a></li>
+                <li><a href="{% url 'Ideaforgehomepage' %}">IdeaForge</a></li>
+                <li><a href="{% url 'Ecoawarehomepage' %}">EcoAware</a></li>
+                <li><a href="{% url 'Profilepage' %}">Profile</a></li>
+            </ul>
+            <ul>
+                <img src="{% static 'Logo.png' %}" alt="tryagain" id="icon">
+                <li id="logo1"><a href="{% url 'homepage' %}"><span>EnviroVista</span></a></li>
+                <li class="hideonmobile"><a href="{% url 'Taskshomepage' %}">Tasks</a></li>
+                <li class="hideonmobile"><a href="{% url 'GCShomepage' %}">GCS</a></li>
+                <li class="hideonmobile"><a href="{% url 'Ideaforgehomepage' %}">IdeaForge</a></li>
+                <li class="hideonmobile"><a href="{% url 'Ecoawarehomepage' %}">EcoAware</a></li>
+                <li class="hideonmobile"><a href="{% url 'Profilepage' %}">Profile</a></li>
+                <li onclick="showsidebar(event)" class="menubtn"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="taskstatus">
+            {% for user in users %}
+            <p>Tasks Completed: {{ user.tasks }}</p>
+            <br><p>GC Coins: {{ user.GCC }}</p>
+            {% endfor %}
+        </div>
+        <div class="swgcc">
+            <a href="{% url 'GCShomepage' %}">Shop with GCC</a>
+        </div>
+        <div class="container">
+            <h1>AVAILABLE TASKS</h1>
+            <div class="buttons"> 
+                <button type="button">All Tasks</button>
+                <button type="button" data-name="tree">Tree</button>
+                <button type="button" data-name="electricity">Electricity</button>
+                <button type="button" data-name="recycle">Recycle</button>
+                <button type="button" data-name="food">Food</button>
+                <button type="button" data-name="transport">Transport</button>
+                <button type="button" data-name="water">Water</button>
+                <button type="button" data-name="sustainability">Sustainability</button>
+                <button type="button" data-name="other">Other</button>
+            </div>
+
+            <div class="tasks">
+                <a href="{% url 'taskpage1' %}"><div class="task" data-name="tree" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJN_9ktuLL6IgDp1uaBk-3gZUFY46KY4Sf9J9GUMnqpuYl8qtpCbBMebwaqseTjbPTtfc&usqp=CAU" alt="">
+                    <div class="taskmatter">
+                        <h2>Plant a tree 5GC Coins</h2>
+                        <p>Planting a tree and report its progress. For weekly progress 2GC coin will be rewarded.</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'taskpage2' %}"><div class="task" data-name="electricity">
+                    <img src="https://www.wikihow.com/images/thumb/c/c7/Make-a-Simple-Electrical-Circuit-Step-1-Version-3.jpg/v4-460px-Make-a-Simple-Electrical-Circuit-Step-1-Version-3.jpg.webp" alt="">
+                    <div class="taskmatter">
+                    <h2>Electricity Conservation 3GC Coins</h2>
+                    <p>People who use solar power equipment can earn 3GC Coins.</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'taskpage3' %}"><div class="task" data-name="recycle">
+                    <img src="https://www.fertilizer-machines.com/wp-content/uploads/2018/10/Turning-Food-Waste-into-Organic-Fertilizer.jpg" alt="">
+                    <div class="taskmatter">
+                        <h2>Recycle 4GC Coins</h2>
+                        <p>Recycle Your Vegetable waste into manure.</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'taskpage3_1' %}"><div class="task" data-name="recycle">
+                    <img src="https://assets-news.housing.com/news/wp-content/uploads/2022/02/07234305/Best-out-of-waste-ideas-to-decorate-your-home-16.png" alt="">
+                    <div class="taskmatter">
+                        <h2>Recycle 5GC Coins</h2>
+                        <p>Create new and creative items with used plastic and other materials for home decoration.</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'taskpage4' %}"><div class="task" data-name="food">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6046/6046134.png" alt="">
+                    <div class="taskmatter">
+                        <h2>Conserving Food 5GC Coins</h2>
+                        <p>People can donate the food to the needy people in Aluminium Foil and earn  5GC Coins.</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'taskpage5' %}"><div class="task" data-name="transport">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiniFBlhHRmg4azC8XvlMn9wx2jRbjMVPxj27bPPemeQCaCXXz9yvFziEO1n1Hi9dBYFDR_FV87dVG9UTTy948LPGInyPhx8eeQ_PvGCjBrREtCdNF1SZo1hx2DXz-J_MAXZEzTM5I3AOo2/s1600/1623675_926007714121566_6357145023562396730_n.jpg" alt="">
+                    <div class="taskmatter">
+                        <h2>Transport in RTC 5GC Coins</h2>
+                        <p>People who use RTC buss pass can earn 5GC Coins.</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'taskpage5_1' %}"><div  class="task" data-name="transport">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQFDvhSDqa5OOw/article-cover_image-shrink_600_2000/0/1685121284556?e=2147483647&v=beta&t=CGTseoTlT2v718lyzIpcN0PDZKILhg33u_BCPkvYlQg" alt="">
+                    <div class="taskmatter">
+                        <p>Conducting survey on helmet wearing and explaining traffic rules to common public, can earn 3GC Coins.</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'taskpage6' %}"><div  class="task" data-name="water">
+                    <img src="https://i.ytimg.com/vi/ahlavBFoBMo/maxresdefault.jpg" alt="">
+                    <div class="taskmatter">
+                        <h2>Conserving Water 5GC Coins</h2>
+                        <p>For all seasons user should reuse household waste water by watering the plants on streets.For performing this task thhe user wioll rewarded with 5GC Coins.</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'taskpage6_1' %}"><div class="task" data-name="water">
+                    <img src="https://media.istockphoto.com/id/1166331626/photo/nature-rain-raindrop-on-a-bucket.jpg?s=612x612&w=0&k=20&c=kZlpM85L7M5LQ74JfhxjU0jBbElpMa7KCxtsbkWhpko=" alt="">
+                    <div class="taskmatter">
+                        <h2>Exclusive Task For Conserving Water</h2>
+                        <p>For RAINY SEASON by filling atleast 15 buckets(10 litre bucket) of rainwater,the water should be filled at different angles.For performing this task the user will be rewarded with 80GC Coins.</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'taskpage7' %}"><div class="task" data-name="sustainability">
+                    <img src="https://www.econlib.org/wp-content/uploads/2018/05/recycling-2.jpg" alt="">
+                    <div class="taskmatter">
+                    <h2>Creating a sustainable environment 10GC Coins</h2>
+                    <p>Implemented Reduce,Reuse,Reccle in daily lifes. GC coins will be awarded according to their work. 10GC coins will be rewarded once for an account for showcasing their roof top garden.</p>
+                    </div></a>
+                </div>
+                <a href="{% url 'taskpage8' %}"><div  class="task" data-name="other">
+                    <img src="https://www.ncsc.gov.uk/images/social-icons.jpg?mpwidth=545&mlwidth=737&twidth=961&dwidth=635&dpr=2.625&width=412" alt="">
+                    <div class="taskmatter">
+                        <p>Promote EnviroVista through in social media 3GC Coins.</p>
+                    </div></a>
+            </div>
+        </section>
+        <div class="sec3">
+            <footer id="footer">
+                <div class="col-3">
+                    <a href="#" style="text-decoration: none; font-size: 25px; font-weight: bold;">EnviroVista</a>
+                </div>
+                <div class="col-3">
+                    <a href="{% url 'aboutus' %}">About Us</a>
+                </div>
+                <div class="col-3">
+                    <a href="{% url 'aboutus' %}">Contact Us</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Terms and Conditions</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="col-3">
+                    <a href="#">Feedback</a>
+                </div>
+                <div class="col-3">
+                    <a href="{% url 'aboutus' %}">Help</a>
+                </div>
+                <p style="font-size: 17px;">© 2024 EnviroVista. <br> All Rights Reserved.</p>
+            </footer>
+    </body>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            color: #66B539;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        #logo1{
+            color: white;
+            right: 400px;
+            position:relative;
+        }
+        #icon{
+            color: white;
+            pointer-events: none;
+            position: relative;
+            right: 390px;
+            height: 50px;
+            width: 50px;
+        }
+        body{
+            min-height: 100%;
+            background-image: url("https://wallpapers.com/images/high/bare-light-green-plain-ccgwylr7jtzskkh4.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        nav{
+            background-color: #EBF2DD;
+            box-shadow: 1px 2px 3px rgb(73, 68, 68);
+        }
+        nav ul{
+            list-style: none;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        nav li{
+            height: 70px;
+        }
+        nav a{
+            height: 100%;
+            padding: 0 30px;
+            text-decoration: none;
+            display: flex;
+            font-size: 18px;
+            align-items: center;
+            color: #151D;
+        }
+        span:hover{
+            color: #EBF2DD;
+            background-color: #66B539;
+        }
+        nav a:hover{
+            color: #EBF2DD;
+            background-color: #66B539;
+            transition: 0.4s;
+        }
+        nav a:active{
+            color: #EBF2DD;
+            background-color: #1f3d0e;
+            transition: 0.1s;
+        }
+        nav li:first-child, :hover{
+            margin-right: auto;
+            /*display: none;*/
+        }
+        .sidebar{
+            position: fixed;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 250px;
+            z-index: 999;
+            top: 0;
+            right: 0;
+            display: none;
+            height: 100%;
+            backdrop-filter:blur(10px);
+            box-shadow: 1px 2px 3px rgb(213, 196, 196);
+        }
+        .sidebar li{
+            width: 100%;
+        }
+        .sidebar a{
+            width: 100%;
+        }
+        .menubtn{
+            display: none;
+        }
+        body{
+            margin: 0;
+        }
+        .taskstatus{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 35px;
+            margin-top: 50px;
+            font-weight: bold;
+            color: #284418;
+            border-color: #1c350e;
+            background-color: #afc584;
+        }
+        .swgcc a{
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            background-color: #66B539;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 2px solid #0f1b09;
+            box-shadow: 1px 2px 3px #254f0c;
+            margin-top: 20px;
+            float: right;
+            text-decoration: none;
+        }
+        .swgcc a:hover{
+            background-color: #1c350e;
+            color: #EBF2DD;
+            transition: 0.4s;
+        }
+        .swgcc a:active{
+            background-color: #54b41d;
+            color: #EBF2DD;
+            transition: 0.1s;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 70px;
+            width: 100%;
+        }
+        .buttons{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .container h1{
+            font-size: 30px;
+            font-weight: bold;
+            margin-right: 20px;
+            color: #284418;
+            background-color: #afc584;
+            padding: 20px 20px;
+            border: 2px solid #374913;
+            border-radius: 10px;
+        }
+        .buttons button{
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #66B539;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #66B539;
+            cursor: pointer;
+        }
+        .buttons button:hover{
+            background-color: #1c350e;
+            color: #EBF2DD;
+            transition: 0.4s;
+        }
+        .buttons button:active{
+            background-color: #54b41d;
+            color: #EBF2DD;
+            transition: 0.1s;
+        }
+        .tasks{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 70px;
+            gap: 20px;
+
+        }
+        .task a{
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            border: 6px solid darkgreen;
+            border-radius: 10px;
+            padding: 20px 20px;
+            background-color: #8a9b6a;
+            width: 450px;
+            height: 450px;
+            color: #151D13;
+        }
+        .task img{
+            width: 50%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .task h2{
+            padding:0 0 20px 0;
+        }
+        .taskmatter{
+            margin-top: 20px;
+        }
+        .task p{
+            font-size: 20px;
+            font-style: times new roman;
+        }
+        .sec3{
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5880px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            width: 100%;
+            height: 200px;
+        }
+        #footer{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: #66B539;
+            width: 100%;
+            height: 200px;
+
+        }
+        .col-3{
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 0px;
+            margin-left: 10px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-color: #66B539;
+            width: 100%;
+           
+        }
+        .col-3 a{
+            color: #151D13;
+            font-size: 15px;
+            padding: 0 0 0 0;
+            text-decoration: none;
+        }
+        .col-3 a:hover{
+            color: #EBF2DD;
+            background-color: #151D13;
+        }
+        @media screen and (max-width: 800px){
+            .hideonmobile{
+                display: none;
+            }
+            .menubtn{
+                display: block;
+                background-color: #EBF2DD;
+            }
+            nav a{
+                color: black;
+            }
+            nav a:hover{
+            background-color: white;
+            }
+            nav a:hover{
+                color: black;
+            }
+            #logo{
+                display: none;
+            }
+            .col-2{
+                width: 50%;
+            }
+            .col-3{
+                width: auto;
+            }
+            #icon{
+                display: flex;
+                right: 10px;
+            }
+            #logo1{
+                display: flex;
+                right: 30px;
+            }
+            .taskstatus{
+                font-size: 30px;
+            }
+            .tasks{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0px;
+            margin-top: 30px;
+            /*border: 2px solid black;*/                                            
+            }
+            .task1{
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                margin-left: 0px;
+                justify-content: center;
+                align-items: center;
+            }
+            .tasks h1{
+                /*position: relative;*/
+                margin-left: 30px;
+            }
+            .task1 h2{
+               /* position: relative;*/
+                margin-left:-20px;
+            }
+            .task1 p{
+                /*display: flex;
+                position: relative;*/
+                margin-left: 0px;
+                font-size: large;
+                /*margin-right: 0px;*/
+            }
+            .task1 button{
+                /*display: flex;
+                position: relative;*/
+                margin-left:270px;
+            }
+            .sec3{
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                margin-top: 6000px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                width: 108%;
+                height: 330px;
+                justify-content: center;
+                align-items: center;
+                background-color: #66B539;
+            }
+            #footer{
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                height: 300px;
+                flex-direction: column;
+                margin-left: 0px;
+            }
+            .col-3{
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 0px;
+                margin-left: 350px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                background-color: #66B539;
+                width: 100%;
+                height: 300px;
+                flex-direction: column;
+            }
+            .col-3 a{
+                color: #151D13;
+                font-size: 15px;
+                padding: 0 0 0 0;
+                text-decoration: none;
+            }
+            .col-3 a:hover{
+                color: #EBF2DD;
+                background-color: #151D13;
+            }
+        }
+    </style>
+    <script>
+            /*SCRIPT FOR SIDE BAR*/
+            function showsidebar(event){
+            event.preventDefault();
+            const sidebar=document.querySelector('.sidebar');
+            sidebar.style.display='flex';
+            }
+            function hidebar(){
+                const sidebar=documnet.querySelector('.sidebar');
+                sidebar.style.display='none';
+            }
+
+            //SCRIPT FOR TASKS
+            const buttons=document.querySelectorAll('.buttons button');
+            const tasks=document.querySelectorAll('.tasks .task');
+            buttons.forEach(button=>{
+                button.addEventListener('click',()=>{
+                    tasks.forEach(task=>{
+                        if(button.innerText.toLowerCase()===task.getAttribute('data-name') || button.innerText.toLowerCase()==='all tasks'){
+                            task.style.display='flex';
+                        }else{
+                            task.style.display='none';
+                        }
+                    });
+                });
+            });
+
+    </script>
+</html>

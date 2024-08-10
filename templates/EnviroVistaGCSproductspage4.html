@@ -1,0 +1,728 @@
+{% load static %}
+
+<html>
+<head>
+    <title>EnviroVista</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="{% static 'EVlogo.jpg' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="showcart">
+    <div class="home">
+        <nav>
+            <ul class="sidebar">
+                <li onclick="hidebar()" style="color: white;"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li id="logo"><a href="{% url 'homepage' %}"><span>EnviroVista</span></a></li>
+                <li><a href="{% url 'Taskshomepage' %}">Tasks</a></li>
+                <li><a href="{% url 'GCShomepage' %}">GCS</a></li>
+                <li><a href="{% url 'Ideaforgehomepage' %}">IdeaForge</a></li>
+                <li><a href="{% url 'Ecoawarehomepage' %}">EcoAware</a></li>
+                <li><a href="{% url 'Profilepage' %}">Profile</a></li>
+            </ul>
+            <ul>
+                <img src="{% static 'Logo.png' %}" alt="tryagain" id="icon">
+                <li id="logo1"><a href="{% url 'homepage' %}"><span>EnviroVista</span></a></li>
+                <li class="hideonmobile"><a href="{% url 'Taskshomepage' %}">Tasks</a></li>
+                <li class="hideonmobile"><a href="{% url 'GCShomepage' %}">GCS</a></li>
+                <li class="hideonmobile"><a href="{% url 'Ideaforgehomepage' %}">IdeaForge</a></li>
+                <li class="hideonmobile"><a href="{% url 'Ecoawarehomepage' %}">EcoAware</a></li>
+                <li class="hideonmobile"><a href="{% url 'Profilepage' %}">Profile</a></li>
+                <li onclick="showsidebar(event)" class="menubtn"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+        <header>
+            <div class="iconcart">
+                <svg class="w-[30px] h-[30px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>                          
+            </div>
+        </header>
+        <!--CODE FOR SEARCH BAR-->
+        <div class="search">
+            <input type="search" placeholder="Search" class="searchbar">
+            <button type="submit" class="searchbtn">Search</button>
+        </div>
+        <div class="products">
+            <div class="productslist">
+                <h1>SAREES</h1> <br><br><br><br>
+                <div class="item">
+                    <img src="https://cdn.urbanwomania.com/wp-content/uploads/2024/03/Cream-and-Green-Silk-Saree-with-Tribal-Print-2.webp" alt="product">
+                    <h2>Green Silk Saree With Tribal Painting</h2>
+                    <div class="price">1100</div>
+                    <button class="addcart">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="https://www.sujatra.com/cdn/shop/products/23.2_6609dd18-d6c0-44ac-9dad-536b7ccd53ba_1024x1024.jpg?v=1604314172" alt="product">
+                    <h2>Tussar Silk Saree </h2>
+                    <div class="price">1000</div>
+                    <button class="addcart">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="https://media.craftmaestros.com/media/catalog/product/cache/a01441fde58691fd2d38c1b8ed6a019d/d/s/dscf6315.jpg" alt="product">
+                    <h2>Ghicha Silk Saree</h2>
+                    <div class="price">900</div>
+                    <button class="addcart">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="https://uttariya.com/cdn/shop/files/DongriasareeNS-Uttariya2023-35.jpg?v=1690806500" alt="product">
+                    <h2>Patachitra cotton and Silk Saree</h2>
+                    <div class="price">1200</div>
+                    <button class="addcart">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzYU6eA7a9VQ2lDYPGI4TmV9JW4xN0A76uTw&s" alt="product">
+                    <h2>Exclusive Gond Cotton Saree</h2>
+                    <div class="price">1300</div>
+                    <button class="addcart">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="https://www.sujatra.com/cdn/shop/products/23.1_Exclusive_gond_tribal_art_painted_cotton_saree_with_Ajrakh_block_printed_combination_pleats_f83bd29c-c9de-4594-bc5b-8c647bb93f47_1024x1024.jpg?v=1604314172" alt="product">
+                    <h2>Bomkai Silk Saree</h2>
+                    <div class="price">1400</div>
+                    <button class="addcart">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="https://vipakka.in/wp-content/uploads/2019/08/handpainted-patachitra-cotton-and-silk-saree-vipakka-5.jpg                    " alt="product">
+                    <h2>Dongria Kondh Saree</h2>
+                    <div class="price">1500</div>
+                    <button class="addcart">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="https://d35l77wxi0xou3.cloudfront.net/opencart/image/productFromFeb2020/Handmade%20Tribal%20aree1600757443-600x600.jpeg" alt="product">
+                    <h2>Gorgeous Kota Saree</h2>
+                    <div class="price">1000</div>
+                    <button class="addcart">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="https://dailybuyys.com/cdn/shop/products/WhatsApp_Image_2019-04-28_at_11.54.48_PM_1024x1024.jpeg?v=1557583655" alt="product">
+                    <h2>Bomkai Silk Saree</h2>
+                    <div class="price">1700</div>
+                    <button class="addcart">Add to Cart</button>
+                </div>
+                <!--<div class="item">
+                    <img src="https://cdn.urbanwomania.com/wp-content/uploads/2024/03/Cream-and-Green-Silk-Saree-with-Tribal-Print-2.webp" alt="product">
+                    <h2>Green Silk Saree With Tribal Painting</h2>
+                    <div class="price">Price: ₹1800</div>
+                    <button class="addcart">Add to Cart</button>
+                </div>-->
+                <!-- Repeat for other product cards -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Tab -->
+    <div class="carttab"> 
+        <h1>SHOPPING CART</h1>
+        <div class="listcart">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkout"><a href="{% url 'GCSorderpage' %}" style="text-decoration: none; color: white;">CHECK OUT</a></button>
+        </div>
+    </div>
+    <div class="sec3">
+        <footer id="footer">
+            <div class="col-3">
+                <a href="#" style="text-decoration: none; font-size: 25px; font-weight: bold;">EnviroVista</a>
+            </div>
+            <div class="col-3">
+                <a href="#">About Us</a>
+            </div>
+            <div class="col-3">
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="col-3">
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="col-3">
+                <a href="#">Terms and Conditions</a>
+            </div>
+            <div class="col-3">
+                <a href="#">FAQ</a>
+            </div>
+            <div class="col-3">
+                <a href="#">Feedback</a>
+            </div>
+            <div class="col-3">
+                <a href="#">Help</a>
+            </div>
+            <div class="col-3">
+                <a href="">© 2024 EnviroVista. All Rights Reserved.</a>
+            </div>
+        </footer>
+    </div>
+</body>
+<style>
+    /**CSS FOR THE NAV BAR**/
+    *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            color: #66B539;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        #logo1{
+            color: white;
+            right: 400px;
+            position:relative;
+        }
+        #icon{
+            color: white;
+            pointer-events: none;
+            position: relative;
+            right: 390px;
+            height: 50px;
+            width: 50px;
+        }
+        body{
+            min-height: 100%;
+            background-image: url("https://wallpapers.com/images/high/bare-light-green-plain-ccgwylr7jtzskkh4.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        nav{
+            background-color: #EBF2DD;
+            box-shadow: 1px 2px 3px rgb(73, 68, 68);
+        }
+        nav ul{
+            list-style: none;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        nav li{
+            height: 70px;
+        }
+        nav a{
+            height: 100%;
+            padding: 0 30px;
+            text-decoration: none;
+            display: flex;
+            font-size: 18px;
+            align-items: center;
+            color: #151D;
+        }
+        span:hover{
+            color: #EBF2DD;
+            background-color: #66B539;
+        }
+        nav a:hover{
+            color: #EBF2DD;
+            background-color: #66B539;
+            transition: 0.4s;
+        }
+        nav a:active{
+            color: #EBF2DD;
+            background-color: #1f3d0e;
+            transition: 0.1s;
+        }
+        nav li:first-child, :hover{
+            margin-right: auto;
+            /*display: none;*/
+        }
+        .sidebar{
+            position: fixed;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 250px;
+            z-index: 999;
+            top: 0;
+            right: 0;
+            display: none;
+            height: 100%;
+            backdrop-filter:blur(10px);
+            box-shadow: 1px 2px 3px rgb(213, 196, 196);
+        }
+        .sidebar li{
+            width: 100%;
+        }
+        .sidebar a{
+            width: 100%;
+        }
+        .menubtn{
+            display: none;
+        }
+        body{
+            margin: 0;
+        }
+    /*CSS FOR SEARCH BAR*/
+    .search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+    }
+    .searchbar{
+        width: 50%;
+        height: 70px;
+        border-radius: 20px;
+        padding: 30px 20px;
+        font-size: 20px;
+        border: 1px solid black;
+        outline: none;
+        box-shadow: 1px 2px 3px #66B539;
+    }
+    .searchbtn{
+        height: 70px;
+        width: 100px;
+        border-radius: 20px;
+        background-color: #66B539;
+        color: white;
+        font-size: 20px;
+        border: 1px solid black;
+        cursor: pointer;
+        margin-top: 0px;
+    }
+    .searchbtn:hover{
+        background-color: #235606;
+        transition: 1s;
+    }
+    /*CSS FOR PRODUCTS*/
+    .products{
+        width: 90%;
+        margin-top: 100px;
+        margin-left: 100px;
+        padding: 30px 30px;
+        text-align: center;
+        align-items: center;
+        padding-top: 10px;
+        background-color: rgb(112, 164, 107);
+        border-radius: 20px;
+        border: 2px solid black;
+    }
+    svg{
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0px;
+    }
+    .iconcart{
+        position: relative;
+        cursor: pointer;
+        width: 50px;
+        float: right;
+        margin-right: 20px;
+    }
+    .iconcart:hover{
+        transform: scale(1.1);
+    }
+    header .iconcart span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #66B539;
+        color: white;
+        width: 15px;
+        height: 15px;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 10px;
+        position: absolute;
+        top: 10px;
+        right: 5px;
+    }
+    .item{
+        display: inline-block;
+        width: 400px;
+        height: 600px;
+        background: #EBF2DD;
+        border-radius: 10px;
+        padding: 30px 20px;
+        margin: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .item img{
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .item h2{
+        margin-top: 10px;
+        font-size: 20px;
+        color: #333;
+    }
+    .item .price{
+        margin-top: 100px;
+        font-size: 18px;
+        color: #666;
+    }
+    .item .addcart{
+        margin-top: 10px;
+        width: 300px;
+        padding: 20px 20px;
+        background-color: #66B539;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 20px;
+    }
+    .item .addcart:hover{
+        background-color: #235606;
+    }
+    .item .addcart:active{
+        background-color:#558f2e ;
+    }
+    /*CSS FOR CART TAB*/
+    .carttab{
+        display: none;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 350px;
+        background-color: #EBF2DD;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        padding: 20px;
+        overflow-y: auto;
+    }
+    .carttab h1{
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .carttab .listcart{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .carttab .listcart .cart-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    .carttab .listcart .cart-item:last-child{
+        border-bottom: none;
+    }
+    .carttab .listcart .cart-item .item-details{
+        flex-grow: 1;
+    }
+    .carttab .listcart .cart-item .item-details h3{
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+    }
+    .carttab .listcart .cart-item .item-details .item-price{
+        font-size: 16px;
+        color: #666;
+    }
+    .carttab .listcart .cart-item .remove-item{
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 5px 10px;
+        transition: background-color 0.3s;
+    }
+    .carttab .listcart .cart-item .remove-item:hover{
+        background-color: #c0392b;
+    }
+    .carttab .btn{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .carttab .btn button{
+        background-color: #66B539;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .carttab .btn button:hover{
+        background-color: #558f2e;
+    }
+    .sec3{
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            margin-top: 400px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            width: 100%;
+            height: 200px;
+        }
+        #footer{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: #66B539;
+            width: 100%;
+            height: 200px;
+
+        }
+        .col-3{
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 0px;
+            margin-left: 10px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-color: #66B539;
+            width: 100%;
+           
+        }
+        .col-3 a{
+            color: #151D13;
+            font-size: 15px;
+            padding: 0 0 0 0;
+            text-decoration: none;
+        }
+        .col-3 a:hover{
+            color: #EBF2DD;
+            background-color: #151D13;
+        }
+    /*CSS FOR RESPONSIVE DESIGN*/
+    @media screen and (max-width:768px){
+            .hideonmobile{
+                display: none;
+            }
+            .menubtn{
+                display: block;
+                background-color: #EBF2DD;
+            }
+            nav a{
+                color: black;
+            }
+            nav a:hover{
+            background-color: white;
+            }
+            nav a:hover{
+                color: black;
+            }
+            #logo{
+                display: none;
+            }
+            .col-2{
+                width: 50%;
+            }
+            .col-3{
+                width: auto;
+            }
+            #icon{
+                display: flex;
+                right: 10px;
+            }
+            #logo1{
+                display: flex;
+                right: 30px;
+            }
+            .sidebar{
+                width: 100%;
+                height: 100%;
+                display: none;
+                backdrop-filter:blur(10px);
+                box-shadow: 1px 2px 3px rgb(213, 196, 196);
+            }
+            .sidebar li{
+                width: 100%;
+            }
+            .sidebar a{
+                width: 100%;
+            }
+            .iconcart{
+                position: relative;
+                cursor: pointer;
+                width: 50px;
+                margin-left: 200px;
+                padding: 10px; 
+            }
+            svg{
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+            }
+            .iconcart:hover{
+                transform: scale(1.1);
+            }
+            .products{
+                width: 100%;
+                margin: auto;
+                text-align: center;
+                max-width: 100%;
+                padding-top: 10px;
+                margin-top: 100px;
+            }
+            .sec3{
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                margin-top: 580px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                width: 100%;
+                height: 330px;
+                justify-content: center;
+                align-items: center;
+                background-color: #66B539;
+            }
+            #footer{
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                height: 300px;
+                flex-direction: column;
+                margin-left: 100px;
+            }
+            .col-3{
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                background-color: #66B539;
+                width: 100%;
+                height: 300px;
+                flex-direction: column;
+            }
+            .col-3 a{
+                color: #151D13;
+                font-size: 15px;
+                padding: 0 0 0 0;
+                text-decoration: none;
+            }
+            .col-3 a:hover{
+                color: #EBF2DD;
+                background-color: #151D13;
+            }
+        }
+</style>
+<script>
+    function showsidebar(event){
+        event.preventDefault();
+        var sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
+    }
+    function hidebar(){
+        var sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+    }
+
+    // JavaScript for Add to Cart functionality
+    document.addEventListener("DOMContentLoaded", function () {
+        const addToCartButtons = document.querySelectorAll(".addcart");
+        const cart = document.querySelector(".listcart");
+        const cartTab = document.querySelector(".carttab");
+        const cartIcon = document.querySelector(".iconcart svg");
+
+        // Add to cart button functionality
+        let cartItems = [];
+        addToCartButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const productItem = this.parentElement;
+                const productName = productItem.querySelector("h2").innerText;
+                const productPrice = productItem.querySelector(".price").innerText;
+
+                const cartItem = {
+                    name: productName,
+                    price: productPrice
+                };
+
+                cartItems.push(cartItem);
+                updateCart();
+            });
+        });
+
+        // Show cart tab
+        cartIcon.addEventListener("click", function () {
+            cartTab.style.display = cartTab.style.display === "block" ? "none" : "block";
+        });
+
+        // Update cart items
+        function updateCart() {
+            cart.innerHTML = "";
+
+            cartItems.forEach(item => {
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+
+                cartItem.innerHTML = `
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        <div class="item-price">${item.price}</div>
+                    </div>
+                    <button class="remove-item">Remove</button>
+                `;
+
+                cart.appendChild(cartItem);
+
+                cartItem.querySelector(".remove-item").addEventListener("click", function () {
+                    const index = cartItems.indexOf(item);
+                    if (index > -1) {
+                        cartItems.splice(index, 1);
+                        updateCart();
+                    }
+                });
+            });
+        }
+
+        // Checkout button functionality
+        document.querySelector(".checkout").addEventListener("click", function () {
+            let data = {};
+            cartItems.forEach(item => {
+                data[item.key] = item.value;
+            });
+
+            $.ajax({
+                url: '{% url "GCSgetdata" %}',
+                type: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                contentType: 'application/json',
+                data: JSON.stringify(cartItems),
+                success: function(response) {
+                    console.log('Success:', response);
+                    // Redirect to the payment page
+                    window.location.href = '{% url "GCSorderpage" %}';
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+            cartItems = [];
+            updateCart();
+        });
+
+        // Close cart tab
+        document.querySelector(".close").addEventListener("click", function () {
+            cartTab.style.display = "none";
+        });
+    });
+</script>
+</html>
