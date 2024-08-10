@@ -15,13 +15,13 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-p7-dag*f^^x7icx3!7g(3zp7j0$9^$+fb90uj8fqxnl^01tt=6')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p7-dag*f^^x7icx3!7g(3zp7j0$9^$+fb90uj8fqxnl^01tt=6'
+#SECRET_KEY = 'django-insecure-p7-dag*f^^x7icx3!7g(3zp7j0$9^$+fb90uj8fqxnl^01tt=6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
