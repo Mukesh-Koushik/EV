@@ -24,9 +24,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-p7-dag*f^^x7icx3!7g(3
 #SECRET_KEY = 'django-insecure-p7-dag*f^^x7icx3!7g(3zp7j0$9^$+fb90uj8fqxnl^01tt=6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh"]
 
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
